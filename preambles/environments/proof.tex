@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Proof environment                           %%             
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheoremstyle{\ProofCommand}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmnumber{\Cref{#3}の}\thmname{#1}}
+\theoremstyle{\ProofCommand}
+\newtheorem{_\ProofCommand}[BaseCounter]{\ProofCaption}
+\newtheorem*{\ProofCommand*}{\ProofCaption}
+
+\RenewDocumentEnvironment{\ProofCommand}{d()}{\begin{_\ProofCommand}[#1]}{\end{_\ProofCommand}}

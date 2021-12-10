@@ -1,0 +1,21 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Lemma environment                           %%             
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheoremstyle{\LemmaCommand}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{#2}\thmnote{\hspace{0.5em}(#3)}}
+\theoremstyle{\LemmaCommand}
+\newtheorem{_\LemmaCommand}[BaseCounter]{\LemmaCaption}
+\newtheorem*{\LemmaCommand*}{\LemmaCaption}
+
+\NewDocumentEnvironment{\LemmaCommand}{o d()}{
+  \IfValueT{#2}{
+    \setcounter{tmp}{\value{BaseCounter}}
+    \setcounterref{BaseCounter}{#2}
+    \addtocounter{BaseCounter}{-1}
+  }
+  \IfValueTF{#1}{\begin{_\LemmaCommand}[#1]}{\begin{_\LemmaCommand}}
+  \IfValueT{#2}{
+    \setcounter{BaseCounter}{\value{tmp}}
+  }
+}
+{\end{_\LemmaCommand}}

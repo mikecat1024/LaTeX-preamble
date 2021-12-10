@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  definition environment                      %%             
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheoremstyle{\DefinitionCommand}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{#2}\thmnote{\hspace{0.5em}(#3)}}
+\theoremstyle{\DefinitionCommand}
+\newtheorem{_\DefinitionCommand}[BaseCounter]{\DefinitionCaption}
+\newtheorem*{\DefinitionCommand*}{\DefinitionCaption}
+
+\NewDocumentEnvironment{\DefinitionCommand}{o d()}{
+  \IfValueT{#2}{
+    \setcounter{tmp}{\value{BaseCounter}}
+    \setcounterref{BaseCounter}{#2}
+    \addtocounter{BaseCounter}{-1}
+  }
+  \IfValueTF{#1}{\begin{_\DefinitionCommand}[#1]}{\begin{_\DefinitionCommand}}
+  \IfValueT{#2}{
+    \setcounter{BaseCounter}{\value{tmp}}
+  }
+}
+{\end{_\DefinitionCommand}}
+

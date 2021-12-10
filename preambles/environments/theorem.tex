@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Theorem environment                          %%             
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheoremstyle{\TheoremCommand}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{#2}\thmnote{\hspace{0.5em}(#3)}}
+\theoremstyle{\TheoremCommand}
+\newtheorem{_\TheoremCommand}[BaseCounter]{\TheoremCaption}
+\newtheorem*{\TheoremCommand*}{\TheoremCaption}
+
+\NewDocumentEnvironment{\TheoremCommand}{o d()}{
+  \IfValueT{#2}{
+    \setcounter{tmp}{\value{BaseCounter}}
+    \setcounterref{BaseCounter}{#2}
+    \addtocounter{BaseCounter}{-1}
+  }
+  \IfValueTF{#1}{\begin{_\TheoremCommand}[#1]}{\begin{_\TheoremCommand}}
+  \IfValueT{#2}{
+    \setcounter{BaseCounter}{\value{tmp}}
+  }
+}
+{\end{_\TheoremCommand}}
+
