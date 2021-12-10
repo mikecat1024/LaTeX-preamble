@@ -1,7 +1,40 @@
 \newcounter{BaseCounter}
 \newcounter{tmp}
+\newcounter{proof}
 
-\input{configration.tex}
+\renewcommand{\qed}{\hfill $\Box$}
+
+\newcommand{\DefinitionCommand}{definition}
+\newcommand{\TheoremCommand}{theorem}
+\newcommand{\PropositionCommand}{proposition}
+\newcommand{\LemmaCommand}{lemma}
+\newcommand{\CorollaryCommand}{corollary}
+\newcommand{\ProofCommand}{proof}
+
+\ifthenelse{\boolean{IsEnglish}}{
+  \newcommand{\DefinitionCaption}{Definition}
+  \newcommand{\TheoremCaption}{Theorem}
+  \newcommand{\PropositionCaption}{Proposition}
+  \newcommand{\LemmaCaption}{Lemma}
+  \newcommand{\CorollaryCaption}{Corollary}
+  \newcommand{\ProofCaption}{Proof}
+
+  \crefname{_definition}{definition}{definitions}
+  \crefname{_theorem}{theorem}{theorems}
+  \crefname{_proposition}{proposition}{propositions}
+  \crefname{_lemma}{lemma}{lemmas}
+  \crefname{_corollary}{corollary}{corollaries}
+}{
+  \newcommand{\DefinitionCaption}{定義}
+  \newcommand{\TheoremCaption}{定理}
+  \newcommand{\PropositionCaption}{命題}
+  \newcommand{\LemmaCaption}{補題}
+  \newcommand{\CorollaryCaption}{系}
+  \newcommand{\ProofCaption}{証明}
+
+  \crefname{equation}{式}{式}
+}
+
 \input{preambles/environments/definition}
 \input{preambles/environments/theorem}
 \input{preambles/environments/proposition}

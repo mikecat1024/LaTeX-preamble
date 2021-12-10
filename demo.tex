@@ -4,40 +4,70 @@
 
 \begin{document}
   これはdemoファイルです。
+
   \begin{definition}[番号あり定義]
     これは定義
   \end{definition}
+
   \begin{definition*}[番号なし定義]
     これは定義
   \end{definition*}
-  \begin{theorem}[番号あり定理]\label{great theorem}
+
+  \begin{theorem}[番号あり定理]\label{theorem:great}
     これは定理
   \end{theorem}
+
   \begin{theorem*}[番号なし定理]
     これは定理
   \end{theorem*}
+
   \begin{proposition}[番号あり命題]
     これは命題
   \end{proposition}
+
   \begin{proposition*}[番号なし命題]
     これは命題
   \end{proposition*}
-  \begin{lemma}[番号あり補題]
+
+  \begin{lemma}[番号あり補題](theorem:great)
     これは補題
   \end{lemma}
+
   \begin{lemma*}[番号なし補題]
     これは補題
   \end{lemma*}
+
   \begin{corollary}[番号あり系]
     これは系
   \end{corollary}
+
   \begin{corollary*}[番号なし系]
     これは系
   \end{corollary*}
-  \begin{proof}(great theorem)
-    これはlabel参照式の証明
+
+  \begin{proof}(theorem:great)\label{proof:great}
+    これはlabel参照型の証明
   \end{proof}
+
   \begin{proof*}
     これは証明
   \end{proof*}
+  
+  \begin{align}
+    a &= b \label{eq:1} \\
+    a &= b+c \label{eq:2} \\
+    a &= b+c+d \label{eq:3}
+  \end{align}
+    
+  Occam's ruleで, 参照されるもの(\cref{eq:2})だけしか数式番号が表示されません.
+  \Cref{theorem:great}とも参照できます.
+  証明を参照するときは\Cref{theorem:great}の証明などとしましょう。
+
+  \begin{corollary}[番号あり系]
+    これは系
+  \end{corollary}
+
+  \begin{corollary}[番号あり系]
+    これは系
+  \end{corollary}
 \end{document}

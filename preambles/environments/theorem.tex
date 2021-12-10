@@ -2,7 +2,7 @@
 %% Theorem environment                          %%             
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newtheoremstyle{\TheoremCommand}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{#2}\thmnote{\hspace{0.5em}(#3)}}
+\newtheoremstyle{\TheoremCommand}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{\hspace{0.2em}#2}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{\TheoremCommand}
 \newtheorem{_\TheoremCommand}[BaseCounter]{\TheoremCaption}
 \newtheorem*{\TheoremCommand*}{\TheoremCaption}
