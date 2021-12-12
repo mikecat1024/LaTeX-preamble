@@ -1,8 +1,6 @@
 \newcounter{BaseCounter}
-\newcounter{basetmp}
 
 \ifthenelse{\boolean{HasSection}}{
-  \newcounter{sectiontmp}
   \renewcommand{\theBaseCounter}{\arabic{section}.\arabic{BaseCounter}}
   \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 }{}

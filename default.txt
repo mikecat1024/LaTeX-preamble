@@ -3,8 +3,9 @@
 \input{LaTeX-preamble/configuration}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% setting area                                 %%
-
-%%                                              %%
+   \setboolean{IsEnglish}{false}
+   \setboolean{HasSection}{false}
+   \setboolean{HasHeader}{false} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{LaTeX-preamble/preambles/preambles}
 
