@@ -1,0 +1,13 @@
+\documentclass[a4paper]{jsarticle}
+
+\input{LaTeX-preamble/configuration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% setting area                                 %%
+
+%%                                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{LaTeX-preamble/preambles/preambles}
+
+\begin{document}
+    
+\end{document}
