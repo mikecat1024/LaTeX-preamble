@@ -1,7 +1,10 @@
 \renewcommand{\qed}{\hfill $\Box$}
 
-\newtheoremstyle{myquote}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
-\theoremstyle{myquote}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% imitation enviroment                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{myimitation}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
+\theoremstyle{myimitation}
 
 \newcommand{\ImitationRef}{規定値}
 
@@ -13,6 +16,9 @@
   \end{_imitation}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% normal enviroments                           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtheoremstyle{mytheorem}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{\hspace{0.2em}#2}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{mytheorem}
 
@@ -62,3 +68,7 @@
 
 \RenewDocumentEnvironment{proof}{r()}{\begin{_proof}[#1]}{\qed\end{_proof}}
 \NewDocumentEnvironment{proof*}{}{\begin{_proof*}}{\qed\end{_proof*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% etc...                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

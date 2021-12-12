@@ -1,5 +1,15 @@
+\NewDocumentCommand\sq{m d()}{\IfValueTF{#2}{\sqrt[#2]{#1}}{\sqrt{#1}}}
+\newcommand{\map}{\mapsto}
+
+\newcommand{\s}{\sigma}
+\renewcommand{\o}{\omega}
+\newcommand{\z}{\zeta}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\ZZ}[1]{\mathbb{Z}/#1\mathbb{Z}}
 
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal}
