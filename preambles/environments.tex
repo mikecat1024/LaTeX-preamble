@@ -1,19 +1,17 @@
-\renewcommand{\qed}{\hfill $\Box$}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% imitation enviroment                         %%
+%% repost enviroment                         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{myimitation}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
-\theoremstyle{myimitation}
+\newtheoremstyle{myrepost}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
+\theoremstyle{myrepost}
 
-\newcommand{\ImitationRef}{規定値}
+\newcommand{\ImitationRef}{initial}
 
-\newtheorem*{_imitation}{imitation}
-\NewDocumentEnvironment{imitation}{r() o}{
+\newtheorem*{_repost}{repost}
+\NewDocumentEnvironment{repost}{r() o}{
   \renewcommand{\ImitationRef}{#1}
-  \begin{_imitation}[#2]
+  \begin{_repost}[#2]
 }{
-  \end{_imitation}
+  \end{_repost}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,7 +23,7 @@
 \NewDocumentCommand\environment{m m}{
   \newtheorem{_#1}[BaseCounter]{#2}
   \newtheorem*{#1*}{#2}
-  \NewDocumentEnvironment{#1}{o d()}{
+  \NewDocumentEnvironment{#1}{o}{
     \IfValueTF{##1}{\begin{_#1}[##1]}{\begin{_#1}}
   }{
     \end{_#1}
@@ -40,8 +38,8 @@
   \environment{corollary}{Corollary}
   \environment{problem}{Problem}
 
-  \newtheoremstyle{myproof}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmname{#1}\thmnumber{\hspace{0.2em}of\hspace{0.2em}\namecref{#3}\hspace{0.2em}\ref{#3}}}
-  \theoremstyle{myproof}
+  \newtheoremstyle{myproofen}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmname{#1}\thmnumber{\hspace{0.2em}of\hspace{0.2em}\namecref{#3}\hspace{0.2em}\ref{#3}}}
+  \theoremstyle{myproofen}
   \newtheorem{_proof}{Proof}
   \newtheorem*{_proof*}{Proof}
 
@@ -58,8 +56,8 @@
   \environment{corollary}{系}
   \environment{problem}{問題}
 
-  \newtheoremstyle{myproof}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmnumber{\namecref{#3}\hspace{0.2em}\ref{#3}\hspace{0.2em}の}\thmname{#1}}
-  \theoremstyle{myproof}
+  \newtheoremstyle{myproofja}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmnumber{\namecref{#3}\hspace{0.2em}\ref{#3}\hspace{0.2em}の}\thmname{#1}}
+  \theoremstyle{myproofja}
   \newtheorem{_proof}{証明}
   \newtheorem*{_proof*}{証明}
 
