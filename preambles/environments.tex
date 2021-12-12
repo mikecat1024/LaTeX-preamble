@@ -1,11 +1,14 @@
 \renewcommand{\qed}{\hfill $\Box$}
 
-\newtheoremstyle{myquote}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{#3}}\hspace{0.2em}\getrefnumber{#3}}
+\newtheoremstyle{myquote}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{myquote}
+
+\newcommand{\ImitationRef}{規定値}
 
 \newtheorem*{_imitation}{imitation}
 \NewDocumentEnvironment{imitation}{r() o}{
-  \begin{_imitation}[#1]
+  \renewcommand{\ImitationRef}{#1}
+  \begin{_imitation}[#2]
 }{
   \end{_imitation}
 }
