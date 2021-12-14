@@ -20,9 +20,14 @@
 \newtheoremstyle{mytheorem}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{\hspace{0.2em}#2}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{mytheorem}
 
-\NewDocumentCommand\environment{m m}{
-  \newtheorem{_#1}[BaseCounter]{#2}
-  \newtheorem*{#1*}{#2}
+\NewDocumentCommand\environment{m m m}{
+  \ifthenelse{\boolean{IsEnglish}}{
+    \newtheorem{_#1}[BaseCounter]{#2}
+    \newtheorem*{#1*}{#2}
+  }{
+    \newtheorem{_#1}[BaseCounter]{#3}
+    \newtheorem*{#1*}{#3}
+  }
   \NewDocumentEnvironment{#1}{o}{
     \IfValueTF{##1}{\begin{_#1}[##1]}{\begin{_#1}}
   }{
@@ -30,16 +35,18 @@
   }
 }
 
-\ifthenelse{\boolean{IsEnglish}}{
-  \environment{definition}{Definition}
-  \environment{theorem}{Theorem}
-  \environment{proposition}{Proposition}
-  \environment{lemma}{Lemma}
-  \environment{corollary}{Corollary}
-  \environment{problem}{Problem}
+\environment{definition}{Definition}{定義}
+\environment{theorem}{Theorem}{定理}
+\environment{proposition}{Proposition}{命題}
+\environment{lemma}{Lemma}{補題}
+\environment{corollary}{Corollary}{系}
+\environment{problem}{Problem}{問題}
 
-  \newtheoremstyle{myproofen}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmname{#1}\thmnumber{\hspace{0.2em}of\hspace{0.2em}\namecref{#3}\hspace{0.2em}\ref{#3}}}
-  \theoremstyle{myproofen}
+
+\newtheoremstyle{myproof}{}{}{}{}{\bfseries}{.}{0.5zw}{\ifthenelse{\boolean{IsEnglish}}{\thmname{#1}\thmnote{\hspace{0.2em}of\hspace{0.2em}\namecref{#3}\hspace{0.2em}\ref{#3}}}{\thmnote{\namecref{#3}\hspace{0.2em}\ref{#3}\hspace{0.2em}の}\thmname{#1}}}
+\theoremstyle{myproof}
+
+\ifthenelse{\boolean{IsEnglish}}{
   \newtheorem{_proof}{Proof}
 
   \crefname{_definition}{definition}{definitions}
@@ -47,16 +54,8 @@
   \crefname{_proposition}{proposition}{propositions}
   \crefname{_lemma}{lemma}{lemmas}
   \crefname{_corollary}{corollary}{corollaries}
+  \crefname{_problems}{problem}{problems}
 }{
-  \environment{definition}{定義}
-  \environment{theorem}{定理}
-  \environment{proposition}{命題}
-  \environment{lemma}{補題}
-  \environment{corollary}{系}
-  \environment{problem}{問題}
-
-  \newtheoremstyle{myproofja}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmnote{\namecref{#3}\hspace{0.2em}\ref{#3}\hspace{0.2em}の}\thmname{#1}}
-  \theoremstyle{myproofja}
   \newtheorem{_proof}{証明}
 
   \crefname{equation}{式}{式}
