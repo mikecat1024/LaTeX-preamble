@@ -41,7 +41,6 @@
   \newtheoremstyle{myproofen}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmname{#1}\thmnumber{\hspace{0.2em}of\hspace{0.2em}\namecref{#3}\hspace{0.2em}\ref{#3}}}
   \theoremstyle{myproofen}
   \newtheorem{_proof}{Proof}
-  \newtheorem*{_proof*}{Proof}
 
   \crefname{_definition}{definition}{definitions}
   \crefname{_theorem}{theorem}{theorems}
@@ -56,13 +55,15 @@
   \environment{corollary}{系}
   \environment{problem}{問題}
 
-  \newtheoremstyle{myproofja}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmnumber{\namecref{#3}\hspace{0.2em}\ref{#3}\hspace{0.2em}の}\thmname{#1}}
+  \newtheoremstyle{myproofja}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmnote{\namecref{#3}\hspace{0.2em}\ref{#3}\hspace{0.2em}の}\thmname{#1}}
   \theoremstyle{myproofja}
   \newtheorem{_proof}{証明}
-  \newtheorem*{_proof*}{証明}
 
   \crefname{equation}{式}{式}
 }
 
-\RenewDocumentEnvironment{proof}{r()}{\begin{_proof}[#1]}{\qed\end{_proof}}
-\NewDocumentEnvironment{proof*}{}{\begin{_proof*}}{\qed\end{_proof*}}
+\RenewDocumentEnvironment{proof}{d()}{
+  \IfValueTF{#1}{\begin{_proof}[#1]}{\begin{_proof}}
+}{
+  \qed\end{_proof}
+}
