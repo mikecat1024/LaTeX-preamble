@@ -17,8 +17,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% normal enviroments                           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{mytheorem}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\thmnumber{\hspace{0.2em}#2}\thmnote{\hspace{0.5em}(#3)}}
+\newtheoremstyle{mytheorem}{}{}{}{}{\bfseries}{.\\}{1zw}{%
+\ifthenelse{\NOT\equal{\SelfNumber}{?}}{\thmname{\SelfNumber}}{\thmname{#1}\thmnumber{\hspace{0.2em}#2}}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{mytheorem}
+
+\newcommand{\SelfNumber}{?}
 
 \NewDocumentCommand\environment{m m m}{
   \ifthenelse{\boolean{IsEnglish}}{
@@ -28,12 +31,14 @@
     \newtheorem{_#1}[BaseCounter]{#3}
     \newtheorem*{#1*}{#3}
   }
-  \NewDocumentEnvironment{#1}{o}{
+  \NewDocumentEnvironment{#1}{o d()}{
+    \IfValueT{##2}{\renewcommand*{\SelfNumber}{##2}}
     \IfValueTF{##1}{\begin{_#1}[##1]}{\begin{_#1}}
   }{
     \end{_#1}
   }
 }
+
 
 \environment{definition}{Definition}{定義}
 \environment{theorem}{Theorem}{定理}
