@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% repost enviroment                         %%
+%% repost enviroment                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtheoremstyle{myrepost}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{myrepost}
 
-\newcommand{\ImitationRef}{initial}
+\newcommand*{\ImitationRef}{initial}
 
 \newtheorem*{_repost}{repost}
 \NewDocumentEnvironment{repost}{r() o}{
@@ -15,27 +15,47 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% selftitle enviroment                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{myselftitle}{}{}{}{}{\bfseries}{.\\}{1zw}{\ifthenelse{\NOT\equal{\SelfTitle}{??}}{\thmname{\SelfTitle}}{\thmname{#1}}\thmnote{\hspace{0.5em}(#3)}}
+\theoremstyle{myselftitle}
+
+\newcommand*{\SelfTitle}{??}
+
+\newtheorem*{_selftitle}{selftitle}
+\NewDocumentEnvironment{selftitle}{r() o}{
+  \IfValueT{#1}{\renewcommand*{\SelfTitle}{#1}}
+  \IfValueTF{#2}{\begin{_selftitle}[#2]}{\begin{_selftitle}}
+}{
+  \end{_selftitle}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% normal enviroments                           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{mytheorem}{}{}{}{}{\bfseries}{.\\}{1zw}{%
-\ifthenelse{\NOT\equal{\SelfNumber}{?}}{\thmname{\SelfNumber}}{\thmname{#1}\thmnumber{\hspace{0.2em}#2}}\thmnote{\hspace{0.5em}(#3)}}
+\newtheoremstyle{mytheorem}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\ifthenelse{\equal{\SelfNumber}{??}}{\thmnumber{\hspace{0.2em}#2}}{\hspace{0.2em}\SelfNumber}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{mytheorem}
 
-\newcommand{\SelfNumber}{?}
+\newcommand*{\SelfNumber}{??}
 
 \NewDocumentCommand\environment{m m m}{
   \ifthenelse{\boolean{IsEnglish}}{
     \newtheorem{_#1}[BaseCounter]{#2}
-    \newtheorem*{#1*}{#2}
+    \newtheorem*{_#1*}{#2}
   }{
     \newtheorem{_#1}[BaseCounter]{#3}
-    \newtheorem*{#1*}{#3}
+    \newtheorem*{_#1*}{#3}
   }
-  \NewDocumentEnvironment{#1}{o d()}{
-    \IfValueT{##2}{\renewcommand*{\SelfNumber}{##2}}
+  \NewDocumentEnvironment{#1}{o}{
     \IfValueTF{##1}{\begin{_#1}[##1]}{\begin{_#1}}
   }{
     \end{_#1}
+  }
+  \NewDocumentEnvironment{#1*}{d() o}{
+    \IfValueT{##1}{\renewcommand*{\SelfNumber}{##1}}
+    \IfValueTF{##2}{\begin{_#1*}[##2]}{\begin{_#1*}}
+  }{
+    \end{_#1*}
   }
 }
 
