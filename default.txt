@@ -6,6 +6,7 @@
    \setboolean{IsEnglish}{false}
    \setboolean{HasSection}{false}
    \setboolean{HasHeader}{false} 
+    \renewcommand{\HeaderNote}{三毛猫}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{LaTeX-preamble/preambles/preambles}
 
