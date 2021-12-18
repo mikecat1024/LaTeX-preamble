@@ -9,9 +9,22 @@
 \newcommand{\Lr}{\Longrightarrow}
 \newcommand{\Ll}{\Longleftarrow}
 \newcommand{\Llr}{\Longleftrightarrow}
+\newcommand{\Slr}{\Leftrightarrow}
 \newcommand{\st}{\; \; \text{s.t.} \; \;}
+\renewcommand{\ae}{\; \text{a.e.} \;}
 \newcommand{\cd}{\cdot}
 \newcommand{\cds}{\cdots}
+\newcommand{\sm}{\setminus}
+\newcommand{\bcup}{\bigcup}
+\newcommand{\bcap}{\bigcap}
+\newcommand{\ul}{\underline}
+\newcommand{\sub}{\subset}
+\newcommand{\subn}{\subsetneq}
+\newcommand{\T}[1]{#1^\top}
+\newcommand{\astF}{\mathcal{F}^\ast}
+%ここ以下はスニペットにしましょう
+\newcommand{\ballint}[1]{\int_{0}^\infty \int_{0}^{\pi} \int_{0}^{2\pi} #1 r^2\sin{\theta} d\phi d\theta dr}
+\newcommand{\inp}[1]{\int_{0}^\infty #1 dx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Greek letters                                %%
@@ -22,9 +35,14 @@
 \newcommand{\gd}{\delta}
 \renewcommand{\ge}{\epsilon}
 \newcommand{\gi}{\iota}
+\newcommand{\gl}{\lambda}
 \newcommand{\gs}{\sigma}
 \newcommand{\go}{\omega}
+\newcommand{\gx}{\xi}
 \newcommand{\gz}{\zeta}
+
+\newcommand{\gL}{\Lambda}
+\newcommand{\gS}{\Sigma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Blackboard bolds                             %%
@@ -35,9 +53,14 @@
 \newcommand{\bR}{\mathbb{R}}
 \newcommand{\bZ}{\mathbb{Z}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%  Fraktur letters                                  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% calligraphy                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cF}{\mathcal{F}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Fraktur letters                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\fa}{\mathfrak{a}}
 \newcommand{\fm}{\mathfrak{m}}
 \newcommand{\fp}{\mathfrak{p}}
@@ -53,3 +76,4 @@
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\rad}{rad}
+
