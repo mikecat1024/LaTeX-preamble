@@ -13,5 +13,3 @@
 \begin{document}
     
 \end{document}
-
-% setcounter{section}したときにBaseCounterを0にするかどうか

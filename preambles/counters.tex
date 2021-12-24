@@ -1,4 +1,4 @@
-\newcounter{BaseCounter}
+\newcounter{BaseCounter}[section]
 
 \ifthenelse{\boolean{HasSection}}{
   \renewcommand{\theBaseCounter}{\arabic{section}.\arabic{BaseCounter}}
