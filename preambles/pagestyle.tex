@@ -3,3 +3,9 @@
   \rhead{\HeaderNote}
   \renewcommand{\headrulewidth}{0.0pt}
 }{}
+
+\NewDocumentCommand\Header{m}{
+  \pagestyle{fancy}
+  \rhead{#1}
+  \renewcommand{\headrulewidth}{0.0pt}
+}
