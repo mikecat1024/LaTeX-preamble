@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% abridged notations                           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\NewDocumentCommand\sq{m d()}{\IfValueTF{#2}{\sqrt[#2]{#1}}{\sqrt{#1}}}
+\newcommand{\sq}{\sqrt}
 \newcommand{\map}{\mapsto}
 \newcommand{\lmap}{\longmapsto}
 \newcommand{\ZZ}[1]{\mathbb{Z}/#1\mathbb{Z}}
@@ -12,14 +12,14 @@
 \newcommand{\Llr}{\Longleftrightarrow}
 \newcommand{\Slr}{\Leftrightarrow}
 \newcommand{\st}{\; \; \text{s.t.} \; \;}
-\renewcommand{\ae}{\; \text{a.e.} \;}
-% \renewcommand{\or}{\mbox{or}}
+\renewcommand{\ae}{\; \text{a.e.}}
 \newcommand{\cd}{\cdot}
 \newcommand{\cds}{\cdots}
 \newcommand{\sm}{\setminus}
 \newcommand{\bcup}{\bigcup}
 \newcommand{\bcap}{\bigcap}
 \newcommand{\ul}{\underline}
+\newcommand{\ol}{\overline}
 \newcommand{\sub}{\subset}
 \newcommand{\subn}{\subsetneq}
 \newcommand{\T}[1]{#1^\top}
@@ -27,6 +27,7 @@
 \newcommand{\emp}{\emptyset}
 \newcommand{\surj}{\twoheadrightarrow}
 \newcommand{\inj}{\hookrightarrow}
+\newcommand{\tensor}{\otimes}
 % \NewDocumentCommand\inp{m m m m}{
 %   \int_{\ifthenelse{\equal{#1}{}}{-\infty}{#1}}^\ifthenelse{\equal{#2}{}}{\infty}{#2} #3 d\ifthenelse{\equal{#4}{}}{x}{#4}
 % }
@@ -45,31 +46,39 @@
 \newcommand{\gi}{\iota}
 \newcommand{\gl}{\lambda}
 \newcommand{\gm}{\mu}
+\newcommand{\gr}{\rho}
 \newcommand{\gs}{\sigma}
 \renewcommand{\gt}{\tau}
 \newcommand{\go}{\omega}
 \newcommand{\gx}{\xi}
+\newcommand{\gy}{\eta}
 \newcommand{\gz}{\zeta}
 
 \newcommand{\gA}{A}
 \newcommand{\gB}{B}
 \newcommand{\gL}{\Lambda}
 \newcommand{\gM}{M}
+\newcommand{\gO}{\Omega}
 \newcommand{\gS}{\Sigma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Blackboard bolds                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\bC}{\mathbb{C}}
+\newcommand{\bH}{\mathbb{H}}
 \newcommand{\bN}{\mathbb{N}}
 \newcommand{\bQ}{\mathbb{Q}}
 \newcommand{\bR}{\mathbb{R}}
+\newcommand{\bT}{\mathbb{T}}
 \newcommand{\bZ}{\mathbb{Z}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% calligraphy                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
 \newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Fraktur letters                             %%
@@ -80,6 +89,8 @@
 \newcommand{\fp}{\mathfrak{p}}
 \newcommand{\fq}{\mathfrak{q}}
 
+\newcommand{\fE}{\mathfrak{E}}
+\newcommand{\fI}{\mathfrak{I}}
 \newcommand{\fS}{\mathfrak{S}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,5 +104,7 @@
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\rad}{rad}
 \DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\N}{N}
 
