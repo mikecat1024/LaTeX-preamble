@@ -1,15 +1,23 @@
 \documentclass[a4paper]{jsarticle}
 
-\input{LaTeX-preamble/configuration}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% setting area                                 %%
-   \setboolean{IsEnglish}{false}
-   \setboolean{HasSection}{false}
-   \setboolean{HasHeader}{false} 
-    \renewcommand{\HeaderNote}{三毛猫}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{LaTeX-preamble/preambles/preambles}
 
+\title{タイトル}
+\author{@mikecat1024}
+\date{}
+
 \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% setting area                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \maketitle
+% \HasHeader{三毛猫}
+% \HasSection
+% \English
+\Japanese
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% contents area                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
 \end{document}

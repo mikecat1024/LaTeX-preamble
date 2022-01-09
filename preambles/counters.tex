@@ -1,10 +1,5 @@
 \newcounter{BaseCounter}[section]
 
-\ifthenelse{\boolean{HasSection}}{
-  \renewcommand{\theBaseCounter}{\arabic{section}.\arabic{BaseCounter}}
-  \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
-}{}
-
 \NewDocumentCommand\HasSection{}{
   \renewcommand{\theBaseCounter}{\arabic{section}.\arabic{BaseCounter}}
   \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
