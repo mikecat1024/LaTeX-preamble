@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% repost enviroment                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{myrepost}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
+\newtheoremstyle{myrepost}{16pt}{16pt}{}{}{\bfseries}{.\\}{1zw}{\thmname{\nameCref{\ImitationRef}}\hspace{0.2em}\getrefnumber{\ImitationRef}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{myrepost}
 
 \newcommand*{\ImitationRef}{initial}
@@ -17,7 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% selftitle enviroment                         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{myselftitle}{}{}{}{}{\bfseries}{.\\}{1zw}{\ifthenelse{\NOT\equal{\SelfTitle}{??}}{\thmname{\SelfTitle}}{\thmname{#1}}\thmnote{\hspace{0.5em}(#3)}}
+\newtheoremstyle{myselftitle}{16pt}{16pt}{}{}{\bfseries}{.\\}{1zw}{\ifthenelse{\NOT\equal{\SelfTitle}{??}}{\thmname{\SelfTitle}}{\thmname{#1}}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{myselftitle}
 
 \newcommand*{\SelfTitle}{??}
@@ -33,10 +33,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% normal enviroments                           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{mytheorem}{}{}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\ifthenelse{\equal{\SelfNumber}{??}}{\thmnumber{\hspace{0.2em}#2}}{\hspace{0.2em}\SelfNumber}\thmnote{\hspace{0.5em}(#3)}}
+\newtheoremstyle{mytheorem}{16pt}{16pt}{}{}{\bfseries}{.\\}{1zw}{\thmname{#1}\ifthenelse{\equal{\SelfNumber}{?}}{\thmnumber{\hspace{0.2em}#2}}{\hspace{0.2em}\SelfNumber}\thmnote{\hspace{0.5em}(#3)}}
 \theoremstyle{mytheorem}
 
-\newcommand*{\SelfNumber}{??}
+\newcommand*{\SelfNumber}{?}
 \NewDocumentCommand\environment{m m}{
   \newtheorem{_#1}[BaseCounter]{#2}
   \newtheorem*{_#1*}{#2}
@@ -76,7 +76,7 @@
   \crefname{_corollary}{corollary}{corollaries}
   \crefname{_problems}{problem}{problems}
 
-  \newtheoremstyle{myproof}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmname{##1}\thmnote{\hspace{0.2em}of\hspace{0.2em}\namecref{##3}\hspace{0.2em}\ref{##3}}}
+  \newtheoremstyle{myproof}{-16pt}{0pt}{}{}{\bfseries}{.}{0.5zw}{\thmname{##1}\thmnote{\hspace{0.2em}of\hspace{0.2em}\namecref{##3}\hspace{0.2em}\ref{##3}}}
   \theoremstyle{myproof}
   \newtheorem*{_proof}{Proof}
   \LangCommon
@@ -89,10 +89,11 @@
   \environment{lemma}{補題}
   \environment{corollary}{系}
   \environment{problem}{問題}
+  \environment{remark}{注意}
 
   \crefname{equation}{式}{式}
 
-  \newtheoremstyle{myproof}{}{}{}{}{\bfseries}{.}{0.5zw}{\thmnote{\namecref{##3}\hspace{0.2em}\ref{##3}\hspace{0.2em}の}\thmname{##1}}
+  \newtheoremstyle{myproof}{-16pt}{0pt}{}{}{\bfseries}{.}{0.5zw}{\thmnote{\namecref{##3}\hspace{0.2em}\ref{##3}\hspace{0.2em}の}\thmname{##1}}
   \theoremstyle{myproof}
   \newtheorem*{_proof}{証明}
   \LangCommon
