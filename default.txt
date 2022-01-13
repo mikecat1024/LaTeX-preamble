@@ -2,22 +2,21 @@
 
 \input{LaTeX-preamble/preambles/preambles}
 
-\title{タイトル}
-\author{@mikecat1024}
-\date{}
-
-\begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% setting area                                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \maketitle
+\title{タイトル}
+\author{@mikecat1024}
+\date{}
 % \HasHeader{三毛猫}
 % \HasSection
 % \English
 \Japanese
 
+\begin{document}
+
+% \maketitle
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% contents area                                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-\end{document}
