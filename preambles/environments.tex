@@ -104,3 +104,22 @@
   \newtheorem*{_proof}{証明}
   \LangCommon
 }
+
+% enumerate
+\NewDocumentEnvironment{enumerate*}{o}{
+  \leavevmode \par \vspace{-8mm}
+  \IfValueTF{#1}{
+    \begin{enumerate}[#1]
+  }{
+    \begin{enumerate}
+  }
+}{
+  \end{enumerate}
+}
+
+%comment
+\NewDocumentEnvironment{comment}{}{
+  \color{red}
+}{
+  \color{black}
+}

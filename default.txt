@@ -1,4 +1,4 @@
-\documentclass[a4paper]{jsarticle}
+\documentclass[a4paper]{jsreport}
 
 \input{LaTeX-preamble/preambles/preambles}
 
@@ -10,6 +10,7 @@
 \date{}
 % \HasHeader{三毛猫}
 % \HasSection
+% \HasChapter
 % \English
 \Japanese
 
