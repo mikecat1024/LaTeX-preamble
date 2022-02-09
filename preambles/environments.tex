@@ -59,6 +59,11 @@
   }{
     \qed\end{_proof}
   }
+  \NewDocumentEnvironment{answer}{d()}{
+    \IfValueTF{##1}{\begin{_answer}[##1]}{\begin{_answer}}
+  }{
+    \end{_answer}
+  }
 }
 
 \NewDocumentCommand\English{}{
@@ -84,6 +89,7 @@
   \newtheoremstyle{myproof}{-16pt}{0pt}{}{}{\bfseries}{.}{0.5zw}{\thmname{##1}\thmnote{\hspace{0.2em}of\hspace{0.2em}\namecref{##3}\hspace{0.2em}\ref{##3}}}
   \theoremstyle{myproof}
   \newtheorem*{_proof}{Proof}
+  \newtheorem*{_answer}{Answer}
   \LangCommon
 }
 
@@ -102,6 +108,7 @@
   \newtheoremstyle{myproof}{-16pt}{0pt}{}{}{\bfseries}{.}{0.5zw}{\thmnote{\namecref{##3}\hspace{0.2em}\ref{##3}\hspace{0.2em}の}\thmname{##1}}
   \theoremstyle{myproof}
   \newtheorem*{_proof}{証明}
+  \newtheorem*{_answer}{解答}
   \LangCommon
 }
 
