@@ -43,6 +43,7 @@
 \newcommand{\inj}{\hookrightarrow}
 \newcommand{\tensor}{\otimes}
 \newcommand{\defeq}{\overset{\mathrm{def}}{\Longleftrightarrow}}
+\newcommand{\overword}[2]{\overset{#1}{#2}}
 % \NewDocumentCommand\inp{m m m m}{
 %   \int_{\ifthenelse{\equal{#1}{}}{-\infty}{#1}}^\ifthenelse{\equal{#2}{}}{\infty}{#2} #3 d\ifthenelse{\equal{#4}{}}{x}{#4}
 % }
@@ -137,6 +138,10 @@
 \DeclareMathOperator{\Pv}{Pv}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\Mat}{Mat}
 
 \makeatletter
 \newcommand\RedeclareMathOperator{%
@@ -155,4 +160,6 @@
 \makeatother
 
 \RedeclareMathOperator{\det}{det}
+\RedeclareMathOperator{\Im}{Im}
+\RedeclareMathOperator{\Re}{Re}
 

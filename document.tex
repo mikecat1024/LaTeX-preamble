@@ -1,0 +1,65 @@
+\documentclass[a4paper]{jsarticle}
+% \documentclass[a4paper]{jsreport}
+
+% \input{LaTeX-preamble/preambles/preambles}
+\input{preambles/packages}
+\input{preambles/counters}
+\input{preambles/environments}
+\input{preambles/macro}
+\input{preambles/pagestyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% setting area                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{ドキュメント}
+\author{@mikecat1024}
+\date{}
+\HasSection
+% \HasChapter
+% \English
+\Japanese
+
+\usepackage{listings}
+
+\begin{document}
+
+\maketitle
+% \HasHeader{三毛猫}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% contents area                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{環境}
+
+環境はtheorem, proposition, lemma, corollary, remark, conjecture, selftitle, repost, proof, answerが存在します。
+以下, コンパイル結果, およびオプション引数の詳細について並べます。
+ソースコードについてはdocument.texの該当箇所を参照してください。
+\begin{theorem}[option]
+  これは定理環境です。
+  一つのオプション引数が存在し, 定理の名前を表すことができます。
+\end{theorem}
+
+\begin{proposition}[option]
+  これは命題環境です。
+  一つのオプション引数が存在し, 命題の名前を表すことができます。
+\end{proposition}
+
+\begin{lemma}
+  これは補題環境です。
+  一つのオプション引数が存在し, 補題の名前を表すことができます。
+\end{lemma}
+
+\begin{corollary}
+  
+\end{corollary}
+
+\begin{remark}
+  
+\end{remark}
+
+\begin{conjecture}
+
+\end{conjecture}
+
+\end{document}

@@ -29,6 +29,12 @@
 }{
   \end{_selftitle}
 }
+% \NewDocumentEnvironment{selftitle*}{r() d() o}{
+%   \IfValueT{##1}{\renewcommand*{\SelfNumber}{##1}}
+%   \IfValueTF{##2}{\begin{_#1*}[##2]}{\begin{_#1*}}
+% }{
+%   \end{_#1*}
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% normal enviroments                           %%
@@ -75,6 +81,7 @@
   \environment{problem}{Problem}
   \environment{remark}{Remark}
   \environment{conjecture}{Conjecture}
+  \environment{example}{Example}
 
   \crefname{_definition}{definition}{definitions}
   \crefname{_theorem}{theorem}{theorems}
@@ -102,6 +109,8 @@
   \environment{problem}{問題}
   \environment{remark}{注意}
   \environment{conjecture}{予想}
+  \environment{example}{例}
+
 
   \crefname{equation}{式}{式}
 
@@ -114,14 +123,41 @@
 
 % enumerate
 \NewDocumentEnvironment{enumerate*}{o}{
-  \leavevmode \par \vspace{-8mm}
+  \leavevmode \par \vspace{-8.5mm}
   \IfValueTF{#1}{
     \begin{enumerate}[#1]
   }{
     \begin{enumerate}
   }
+  \setlength{\leftskip}{1zw}
 }{
   \end{enumerate}
+}
+
+\NewDocumentEnvironment{enumerate+}{o}{
+  \IfValueTF{#1}{
+    \begin{enumerate}[#1]
+  }{
+    \begin{enumerate}
+  }
+  \setlength{\leftskip}{1zw}
+}{
+  \end{enumerate}
+}
+
+\NewDocumentEnvironment{description*}{o}{
+  \begin{description}
+  \setlength{\leftskip}{1zw}
+}{
+  \end{description}
+}
+
+\NewDocumentEnvironment{description+}{o}{
+  \leavevmode \par \vspace{-8.5mm}
+  \begin{description}
+  \setlength{\leftskip}{1zw}
+}{
+  \end{description}
 }
 
 %comment
